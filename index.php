@@ -13,11 +13,7 @@ $conn = mysqli_connect($host, $user, $pass, $db);
     <title>Quillquest demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-      /* @media screen and (max-width:992px) {
-        .column-container{
-            width: 25%;
-        }  
-      } */
+      
       @media screen and (max-width:576px) {
         .column-container{
             width: 50%;
@@ -150,9 +146,9 @@ $conn = mysqli_connect($host, $user, $pass, $db);
 
 <!-- product cards -->
 
-<div class="container-fluid" style="margin-top:50px;">
+<div class="container" style="margin-top:50px;">
   <!-- 1st row -->
-  <div class="container-fluid d-inline-flex justify-content-center p-4" >
+  <div class="container d-flex justify-content-center p-4" >
     <?php
       $query="select * from products where product_id>0 and product_id<=4 order by rand()";
       $result=mysqli_query($conn,$query);
