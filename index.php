@@ -1,4 +1,4 @@
-<?php session_start() 
+<?php session_start(); 
 $host = 'localhost';
 $user = 'root';
 $pass = '';
@@ -18,6 +18,7 @@ $conn = mysqli_connect($host, $user, $pass, $db);
             width: 50%;
         }  
       }
+      
 
 
       
@@ -149,7 +150,7 @@ $conn = mysqli_connect($host, $user, $pass, $db);
 
 <div class="container-fluid" style="margin-top:50px;">
   <!-- 1st row -->
-  <div class="container mx-3" >
+  <div class="container d-inline-flex justify-content-center me-0" >
     <?php
 
       
@@ -164,7 +165,7 @@ $conn = mysqli_connect($host, $user, $pass, $db);
     ?>
     
               
-                <div class="card column-container">
+                <div class="card column-container mx-3 my-3">
                   <img src="./images/<?=$prod_img?>" class="card-img-top img-fluid" alt="..." style="height: 18rem;">
                   <div class="card-body">
                       <h5 class="card-title"><?=$prod_title?></h5>
@@ -187,7 +188,7 @@ $conn = mysqli_connect($host, $user, $pass, $db);
     
   
  <!-- 2nd row -->
-  <div class="container mx-3" >
+  <div class="container d-inline-flex mx-3" >
     <?php 
       $query="select * from products where product_id>4 and product_id<=8 order by rand()"; 
       $result=mysqli_query($conn,$query);
@@ -222,7 +223,7 @@ $conn = mysqli_connect($host, $user, $pass, $db);
    
    
  <!-- 3rd row -->
-  <div class="container mx-3">
+  <div class="container d-inline-flex mx-3">
     <?php
           $query="select * from products where product_id>8 and product_id<=12 order by rand()"; 
           $result=mysqli_query($conn,$query);
