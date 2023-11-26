@@ -13,15 +13,17 @@ $conn = mysqli_connect($host, $user, $pass, $db);
     <title>Quillquest demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
+      /* @media screen and (max-width:992px) {
+        .column-container{
+            width: 25%;
+        }  
+      } */
       @media screen and (max-width:576px) {
         .column-container{
             width: 50%;
         }  
       }
-      
-
-
-      
+        
     </style>
 </head>
 <body>
@@ -150,11 +152,8 @@ $conn = mysqli_connect($host, $user, $pass, $db);
 
 <div class="container-fluid" style="margin-top:50px;">
   <!-- 1st row -->
-  <div class="container d-inline-flex justify-content-center me-0" >
+  <div class="container-fluid d-inline-flex justify-content-center p-4" >
     <?php
-
-      
-
       $query="select * from products where product_id>0 and product_id<=4 order by rand()";
       $result=mysqli_query($conn,$query);
       while($row=mysqli_fetch_assoc($result)){
@@ -165,7 +164,7 @@ $conn = mysqli_connect($host, $user, $pass, $db);
     ?>
     
               
-                <div class="card column-container mx-3 my-3">
+                <div class="card column-container mx-3 my-3" >
                   <img src="./images/<?=$prod_img?>" class="card-img-top img-fluid" alt="..." style="height: 18rem;">
                   <div class="card-body">
                       <h5 class="card-title"><?=$prod_title?></h5>
