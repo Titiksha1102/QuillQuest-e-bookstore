@@ -1,3 +1,10 @@
+<?php session_start() 
+$host = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'quillquest';
+$conn = mysqli_connect($host, $user, $pass, $db);
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,7 +24,7 @@
     </style>
 </head>
 <body>
-<?php session_start() ?>
+
             
 <!-- navbar -->
 <nav class="navbar bg-light navbar-collapse-sm" >
@@ -142,14 +149,10 @@
 
 <div class="container-fluid" style="margin-top:50px;">
   <!-- 1st row -->
-  <div class="row mx-3" >
+  <div class="container mx-3" >
     <?php
 
-      $host = 'localhost';
-      $user = 'root';
-      $pass = '';
-      $db = 'quillquest';
-      $conn = mysqli_connect($host, $user, $pass, $db);
+      
 
       $query="select * from products where product_id>0 and product_id<=4 order by rand()";
       $result=mysqli_query($conn,$query);
@@ -160,8 +163,8 @@
         $prod_img=$row['prod_img'];
     ?>
     
-              <div class="col col-sm-3 my-4 column-container" >
-                <div class="card">
+              
+                <div class="card column-container">
                   <img src="./images/<?=$prod_img?>" class="card-img-top img-fluid" alt="..." style="height: 18rem;">
                   <div class="card-body">
                       <h5 class="card-title"><?=$prod_title?></h5>
@@ -175,7 +178,7 @@
                       
                   </div>
                 </div>
-              </div>
+              
             
     <?php
           }
@@ -184,7 +187,7 @@
     
   
  <!-- 2nd row -->
-  <div class="row mx-3" >
+  <div class="container mx-3" >
     <?php 
       $query="select * from products where product_id>4 and product_id<=8 order by rand()"; 
       $result=mysqli_query($conn,$query);
@@ -195,8 +198,8 @@
         $prod_img=$row['prod_img'];
     ?>
     
-              <div class="col col-sm-3 my-4 column-container" >
-                <div class="card">
+              
+                <div class="card column-container">
                   <img src="./images/<?=$prod_img?>" class="img-fluid card-img-top" alt="..." style="height: 18rem;">
                   <div class="card-body">
                       <h5 class="card-title"><?=$prod_title?></h5>
@@ -210,7 +213,7 @@
                       
                   </div>
                 </div>
-              </div>
+              
          
         <?php
           }
@@ -219,7 +222,7 @@
    
    
  <!-- 3rd row -->
-  <div class="row mx-3">
+  <div class="container mx-3">
     <?php
           $query="select * from products where product_id>8 and product_id<=12 order by rand()"; 
           $result=mysqli_query($conn,$query);
@@ -230,8 +233,8 @@
             $prod_img=$row['prod_img'];
     ?>
     
-              <div class="col col-sm-3 my-4 column-container" >
-                <div class="card">
+              
+                <div class="card column-container">
                   <img src="./images/<?=$prod_img?>" class="img-fluid card-img-top" alt="..." style="height: 18rem;"/>
                   <div class="card-body">
                       <h5 class="card-title"><?=$prod_title?></h5>
@@ -245,7 +248,7 @@
                       
                   </div>
                 </div>
-              </div>
+              
         <?php
          }
         ?>
